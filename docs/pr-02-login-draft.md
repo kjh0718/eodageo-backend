@@ -1,7 +1,7 @@
 # PR 초안 2 — 5주차 로그인 1차 경로
 
-기준 브랜치: `presentation/week5-design`  
-제안 브랜치: `presentation/week5-login-v1`  
+기준 브랜치: `presentation/week5-design`
+제안 브랜치: `presentation/week5-login-v1`
 상태: 로컬 초안. PR·리뷰·병합 미생성.
 
 ## 목적

@@ -33,4 +33,3 @@ public class LoginController {
                               boolean requiresAgreement, String nickname,
                               UUID userId) {}
 }
-

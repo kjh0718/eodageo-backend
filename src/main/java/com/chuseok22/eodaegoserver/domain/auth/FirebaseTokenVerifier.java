@@ -32,4 +32,3 @@ public class FirebaseTokenVerifier {
     return token;
   }
 }
-

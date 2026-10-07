@@ -51,4 +51,3 @@ public class LoginService {
     return members.save(member);
   }
 }
-

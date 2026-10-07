@@ -9,4 +9,3 @@ spring:
 jwt:
   secret-key: ${JWT_SECRET_KEY}
   access-exp-millis: 3600000
-

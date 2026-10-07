@@ -68,4 +68,3 @@ public class Member {
   @Column(nullable = false)
   private boolean marketingAgreed;
 }
-

@@ -7,4 +7,3 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface MemberRepository extends JpaRepository<Member, UUID> {
   Optional<Member> findBySocialTypeAndProviderId(SocialType socialType, String providerId);
 }
-
