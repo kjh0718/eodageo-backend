@@ -1,6 +1,6 @@
 # 어대GO Backend
 
-어대GO Spring Boot 서버의 5주차 작업 범위입니다. 회원·도감·시설·코스 데이터 설계와 소셜 로그인 1차 경로를 다룹니다.
+어대GO 백엔드의 5주차 설계와 소셜 로그인 1차 구현을 정리한 저장소입니다. 회원·도감·시설·코스 데이터 설계와 로그인 경로를 다룹니다.
 
 ## 작업 범위
 
@@ -41,7 +41,3 @@ $env:JWT_SECRET_KEY = '<32-byte-or-longer-secret>'
 응답은 `accessToken`, `firstLogin`, `requiresAgreement`, `nickname`, `userId`를 담습니다. H2 인메모리 DB를 사용하므로 서버 재시작 시 회원 데이터는 지워집니다. 약관 수정 API가 없어 현재 구현에서 `requiresAgreement`는 계속 `true`입니다.
 
 재발급·로그아웃·관리자 로그인과 닉네임 충돌 재시도는 이 범위에 포함되지 않습니다. 회원 저장 시 NOT NULL 제약을 만족시키는 닉네임은 UUID에서 만든 임시값입니다.
-
-## 출처
-
-이 저장소는 2026-10-07에 김재현·강지윤의 5주차 학습보고서(2026-09-29~10-05)와 [원본 BE 저장소](https://github.com/eodaego/eodaego-BE)의 커밋 `de0766f06b6fec2fa381cab0f06179a02f73eb78`을 참고해 별도로 구성했습니다. 현재 브랜치와 커밋은 당시의 이력이나 과거 PR·리뷰를 나타내지 않습니다. H2 DB, UUID 임시 닉네임, 정적 `/api/v1` 경로는 이 저장소의 실행을 위한 선택입니다.
