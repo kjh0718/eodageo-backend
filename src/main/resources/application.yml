@@ -1,7 +1,8 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:eodaego;DB_CLOSE_DELAY=-1
-    driver-class-name: org.h2.Driver
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/eodaego}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update

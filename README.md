@@ -19,10 +19,13 @@
 
 ## 로컬 실행
 
-로그인 브랜치에서 Java 21, Firebase 서비스 계정, 32바이트 이상의 JWT 비밀키를 준비합니다. 서비스 계정 JSON은 저장소 밖에 둡니다.
+Java 21, PostgreSQL 17, Firebase 서비스 계정, 32바이트 이상의 JWT 비밀키를 준비합니다. 서비스 계정 JSON은 저장소 밖에 둡니다.
 
 ```powershell
 $env:GOOGLE_APPLICATION_CREDENTIALS = 'C:\path\outside-repo\firebase-service-account.json'
+$env:DB_URL = 'jdbc:postgresql://localhost:5432/eodaego'
+$env:DB_USERNAME = '<db-user>'
+$env:DB_PASSWORD = '<db-password>'
 $env:JWT_SECRET_KEY = '<32-byte-or-longer-secret>'
 .\gradlew.bat bootRun
 ```
@@ -38,6 +41,6 @@ $env:JWT_SECRET_KEY = '<32-byte-or-longer-secret>'
 }
 ```
 
-응답은 `accessToken`, `firstLogin`, `requiresAgreement`, `nickname`, `userId`를 담습니다. H2 인메모리 DB를 사용하므로 서버 재시작 시 회원 데이터는 지워집니다. 약관 수정 API가 없어 현재 구현에서 `requiresAgreement`는 계속 `true`입니다.
+응답은 `accessToken`, `firstLogin`, `requiresAgreement`, `nickname`, `userId`를 담습니다. 약관 수정 API가 없어 현재 구현에서 `requiresAgreement`는 계속 `true`입니다.
 
 재발급·로그아웃·관리자 로그인과 닉네임 충돌 재시도는 이 범위에 포함되지 않습니다. 회원 저장 시 NOT NULL 제약을 만족시키는 닉네임은 UUID에서 만든 임시값입니다.
