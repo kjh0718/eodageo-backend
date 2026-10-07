@@ -9,4 +9,3 @@ public class EodaegoServerApplication {
     SpringApplication.run(EodaegoServerApplication.class, args);
   }
 }
-
