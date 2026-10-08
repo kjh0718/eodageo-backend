@@ -1,6 +1,6 @@
 # 5주차 설계 정리
 
-근거: 김재현·강지윤 5주차 학습보고서(2026-09-29~10-05). 회원·도감·시설·코스의 설계를 정리한다. 현재 실행 코드 범위는 로그인 1차뿐이다.
+근거: 김재현·강지윤 5주차 학습보고서(2026-09-29~10-05). 회원·도감·시설·코스의 설계를 정리한다. 현재 코드는 로그인 1차 구현과 시설·코스·즐겨찾기 엔티티를 포함한다.
 
 ## 회원과 로그인
 
@@ -28,6 +28,8 @@
 - `CourseFavorite`는 회원과 코스를 연결한다. 추천 실패 기록은 `failureType`과 `message`로 원인을 분류한다.
 - 흐름: 공식·공공 자료 → AI 수집·정제 → 사용자 API 동기화·검증 → 앱 조회, 관리자 검수. 추천 결과도 사용자 API가 실제 시설과 좌표를 검증한 뒤 저장한다.
 
+시설·코스·코스장소·즐겨찾기·추천 실패 기록의 엔티티를 추가했다. 필드 타입, DB 제약, 스냅샷과 식별자 규칙은 [시설·코스·즐겨찾기 엔티티](facility-course-entities.md)에 정리한다. 시설 동기화와 코스·즐겨찾기 API는 후속 구현 범위다.
+
 ```mermaid
 erDiagram
     Member ||--o{ MemberCatalogCollection : collects
@@ -36,7 +38,7 @@ erDiagram
     Member ||--o{ CourseFavorite : favorites
     Course ||--o{ CourseFavorite : bookmarked_as
     Course ||--o{ CoursePlace : contains
-    Facility ||..o{ CoursePlace : "facilityId lookup, no FK"
+    Facility ||..o{ CoursePlace : "aiFacilityId lookup, no FK"
 ```
 
 위 그림은 관계 설명용이다. 3주차 공동 ERD 초안의 12개 테이블을 그대로 복제한 완성 스키마가 아니다.
